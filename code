@@ -1,0 +1,15 @@
+function arrayMaximalAdjacentDifference(inputArray) {
+    //variable that collects data of the maximum difference between any pair
+    var count = 0;
+    //loops through the array getting the difference between
+    //any adjacent pairs
+    for(var i = 0;i<inputArray.length-1;i++){
+        var substract = Math.abs(inputArray[i]-inputArray[i+1]);
+        var substractInverse =Math.abs(inputArray[i+1]-inputArray[i]);
+        //replaces the value of count with the larger difference between any adjacent pair
+        if(count < substract || count< substractInverse){
+            count = substract;
+        }
+    }
+    return count;
+}
